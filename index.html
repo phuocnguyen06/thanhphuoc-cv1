@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nguyễn Thành Phước</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .cv-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+        }
+
+        /* Decorative Elements */
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+            z-index: 10;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            padding: 50px;
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .header-left {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+        }
+
+        .header-right {
+            width: 180px;
+            height: 180px;
+            margin-left: 40px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .profile-img::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .profile-img:hover::after {
+            left: 100%;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .name::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 12px 25px;
+            font-size: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #555;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .contact-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .contact-value {
+            color: #333;
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 0 50px 50px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #667eea, #764ba2, transparent);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+            font-size: 16px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .section-content:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-left: 4px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+        }
+
+        .timeline-date {
+            width: 150px;
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+        }
+
+        .timeline-content {
+            flex: 1;
+            margin-left: 25px;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .timeline-subtitle {
+            color: #667eea;
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .timeline-description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .timeline-description ul {
+            margin: 12px 0 0 20px;
+        }
+
+        .timeline-description li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .timeline-description li::before {
+            content: '▸';
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .skill-level {
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Certificates & Awards */
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cert-item::before {
+            content: '🏆';
+            position: absolute;
+            left: 20px;
+            font-size: 20px;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.12);
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-left: 40px;
+        }
+
+        .cert-year {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Interests */
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .interest-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .interest-item:hover::before {
+            left: 100%;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Activity Items */
+        .activity-item {
+            margin-bottom: 25px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 4px solid #667eea;
+        }
+
+        .activity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+        }
+
+        .activity-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .activity-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .activity-description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .activity-description ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .activity-description li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .activity-description li::before {
+            content: '▸';
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+
+        /* Social Links */
+        .social-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-links li {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .social-links a {
+            display: block;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .social-links a:hover::before {
+            left: 100%;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .cv-container {
+                margin: 0;
+                border-radius: 15px;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+            }
+            
+            .header-right {
+                margin: 30px auto 0;
+                width: 150px;
+                height: 150px;
+            }
+            
+            .main-content {
+                padding: 0 30px 40px;
+            }
+            
+            .name {
+                font-size: 32px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .timeline-date {
+                width: auto;
+                margin-bottom: 15px;
+            }
+            
+            .timeline-content {
+                margin-left: 0;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: left;
+                margin-top: 25px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                flex-direction: column;
+            }
+            
+            .social-links li {
+                min-width: auto;
+            }
+            
+            .fab {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                max-width: none;
+                border-radius: 0;
+            }
+            
+            .fab {
+                display: none;
+            }
+            
+            .section {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        /* Scroll Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <h1 class="name">Nguyễn Thành Phước</h1>
+                <div class="contact-grid">
+                    <span class="contact-label">Ngày sinh</span>
+                    <span class="contact-value">16/05/2006</span>
+                    
+                    <span class="contact-label">Giới tính</span>
+                    <span class="contact-value">Nam</span>
+                    
+                    <span class="contact-label">Điện thoại</span>
+                    <span class="contact-value">(+84) 912398xxx</span>
+                    
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">sinhvien@funix.edu.vn</span>
+                    
+                    <span class="contact-label">Địa chỉ</span>
+                    <span class="contact-value">Bình Định, Việt Nam</span>
+                    
+                    <span class="contact-label">Website</span>
+                    <span class="contact-value">https://abc.tech</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="z6626799065083_049cedadff3246b412ac15f05f04f33f.jpg" alt="Ảnh Nguyễn Thành Phước" class="profile-img">
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Mục tiêu nghề nghiệp -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Mục tiêu nghề nghiệp</h2>
+                <div class="section-content">
+                    Là một sinh viên đã hoàn thành chương trình chứng chỉ Doanh Nghiệp của FUNiX. Em mong muốn mình sẽ được làm việc với vị trí Fullstack Developer, có thể vận dụng những kiến thức đã được trau dồi và không ngừng học hỏi để phát triển bản thân, cũng như hoàn thành tốt nhất công việc được giao.
+                </div>
+            </div>
+
+            <!-- Học vấn -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Học vấn</h2>
+                <div class="timeline-item">
+                    <div class="timeline-date">06/2024 - 05/2028</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">FUNiX</div>
+                        <div class="timeline-subtitle">Tốt nghiệp chứng chỉ doanh nghiệp nhãn Fullstack.</div>
+                        <div class="timeline-description">GPA: 9 / 10</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2020 - 07/2022</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Cử nhân - ĐH FPT</div>
+                        <div class="timeline-subtitle">Chuyên ngành: Kỹ thuật phần mềm.</div>
+                        <div class="timeline-description">GPA: 3.2 / 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kinh nghiệm làm việc -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Kinh nghiệm làm việc</h2>
+                <div class="timeline-item">
+                    <div class="timeline-date">05/2022 - Hiện tại</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Công ty Y</div>
+                        <div class="timeline-subtitle">Full Stack Developer</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Xây dựng, phát triển Website dựa trên thiết kế và yêu cầu đã có.</li>
+                                <li>Phân tích và thiết kế Database, sử dụng các hệ quản trị CSDL (MySQL, SQLServer, NoSQL, ...) và viết được các câu truy vấn.</li>
+                                <li>Sử dụng ngôn ngữ server-side (Python, Java, ...) để xây dựng các Web Service.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">06/2021 - 04/2022</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Công ty X</div>
+                        <div class="timeline-subtitle">Web Designer</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Thiết kế Website dự trên yêu cầu của khách hàng.</li>
+                                <li>Sử dụng các công cụ: Figma, Canva, PTS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hoạt động -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Hoạt động</h2>
+                <div class="timeline-item">
+                    <div class="timeline-date">03/2019 - 05/2019</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">FPT Edu Hackathon 2019</div>
+                        <div class="timeline-subtitle">Giải 3 bảng A</div>
+                        <div class="timeline-description">Đề tài: Trang web về phân loại rác thải.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2016 - 08/2017</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Câu lạc bộ Z</div>
+                        <div class="timeline-subtitle">Trưởng ban chuyên môn</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kỹ năng -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Kỹ năng</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-name">HTML/CSS</div>
+                        <div class="skill-level">Fundamental</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Javascript</div>
+                        <div class="skill-level">Intermediate</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">NodeJS</div>
+                        <div class="skill-level">Intermediate</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Bootstrap 5</div>
+                        <div class="skill-level">Fundamental</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chứng chỉ - Giải thưởng -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Chứng chỉ - Giải thưởng</h2>
+                <div class="cert-item">
+                    <span class="cert-name">CHỨNG CHỈ LẬP TRÌNH WEB - FUNIX</span>
+                    <span class="cert-year">2021</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">CHỨNG CHỈ LẬP TRÌNH JAVASCRIPT - FUNIX</span>
+                    <span class="cert-year">2021</span>
+                </div>
+            </div>
+
+            <!-- Sở thích -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Sở thích</h2>
+                <div class="interests-list">
+                    <span class="interest-item">🎵 Âm nhạc</span>
+                    <span class="interest-item">🎮 Chơi game</span>
+                    <span class="interest-item">✈️ Du lịch</span>
+                    <span class="interest-item">👨‍🍳 Nấu ăn</span>
+                </div>
+            </div>
+
+            <!-- Dự án -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Dự án</h2>
+                
+                <div class="activity-item">
+                    <div class="activity-title">TRANG WEB QUẢN LÝ THÚ CƯNG</div>
+                    <div class="activity-date">2021</div>
+                    <div class="activity-description">
+                        <ul>
+                            <li><strong>Vị trí:</strong> Developer.</li>
+                            <li><strong>Mô tả:</strong> Ứng dụng giúp quản lý các thông tin của thú cưng như: Cân nặng, giống, tình trạng tiêm chủng, ... Bao gồm các chức năng thêm / sửa / xóa.</li>
+                            <li><strong>Nhiệm vụ:</strong> Phát triển, tối ưu code và xử lý lỗi.</li>
+                            <li><strong>Công nghệ:</strong> HTML, CSS.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-title">TRANG WEB XEM TIN TỨC</div>
+                    <div class="activity-date">2021</div>
+                    <div class="activity-description">
+                        <ul>
+                            <li><strong>Vị trí:</strong> Developer.</li>
+                            <li><strong>Mô tả:</strong> Trang Web xem tin tức từ nhiều nguồn khác nhau, người dùng có thể tìm kiếm các tin tức dựa theo từ khóa.</li>
+                            <li><strong>Nhiệm vụ:</strong> Phát triển, tối ưu code và xử lý lỗi.</li>
+                            <li><strong>Công nghệ:</strong> HTML, CSS.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-title">CV CÁ NHÂN</div>
+                    <div class="activity-date">2021</div>
+                    <div class="activity-description">
+                        <ul>
+                            <li><strong>Vị trí:</strong> Developer.</li>
+                            <li><strong>Mô tả:</strong> Trang Web CV cá nhân online. Gồm các thông tin cá nhân cũng như kỹ năng nghề nghiệp.</li>
+                            <li><strong>Nhiệm vụ:</strong> Phát triển, tối ưu code và xử lý lỗi.</li>
+                            <li><strong>Công nghệ:</strong> HTML, CSS.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liên hệ -->
+            <div class="section scroll-reveal">
+                <h2 class="section-title">Liên hệ</h2>
+                <ol class="social-links">
+                    <li><a href="#" target="_blank">📘 Facebook</a></li>
+                    <li><a href="#" target="_blank">💼 LinkedIn</a></li>
+                    <li><a href="#" target="_blank">🐙 Github</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="window.print()" title="In CV">
+        🖨️
+    </div>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add smooth scrolling
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add typing effect to name
+        const nameElement = document.querySelector('.name');
+        const originalName = nameElement.textContent;
+        nameElement.textContent = '';
+        
+        setTimeout(() => {
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalName.length) {
+                    nameElement.textContent += originalName.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            typeWriter();
+        }, 500);
+
+        // Add particle effect on hover for profile image
+        const profileImg = document.querySelector('.profile-img');
+        profileImg.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05) rotate(5deg)';
+        });
+        
+        profileImg.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+
+        // Add ripple effect to buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+            
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            circle.classList.add('ripple');
+            
+            const ripple = button.getElementsByClassName('ripple')[0];
+            if (ripple) {
+                ripple.remove();
+            }
+            
+            button.appendChild(circle);
+        }
+
+        // Apply ripple effect to social links
+        document.querySelectorAll('.social-links a').forEach(button => {
+            button.addEventListener('click', createRipple);
+        });
+
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 600ms linear;
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+            
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
